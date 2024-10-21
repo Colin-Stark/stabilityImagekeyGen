@@ -3,11 +3,13 @@ require('dotenv').config();
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send(`${process.env.KEY}`);
+    if (process.env.KEY) {
+        res.send('Hello World!');
+    }
+    else {
+        res.send('Error');
+    }
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
 
 module.exports = app;
