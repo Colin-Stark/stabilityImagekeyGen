@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/', (req, res) => {
     if (process.env.KEY) {
-        res.send('Hello World!');
+        res.send(`${process.env.KEY}`);
     }
     else {
         res.send('Error');
